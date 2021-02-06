@@ -10,22 +10,25 @@ const Header = () => {
   )
 }
 
+
+
+
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    textAlign: "center",
+    paddingTop: 10,
+    paddingBottom: 10,
+    justifyContent: "center",
+    opacity: .9,
   },
   header: {
-    color: rgb(214, 28, 205),
-    font-size: 5rem,
-    font-weight: 800,
+    fontSize: 5,
+    fontWeight: "800",
     margin: 0,
   },
   headerText: {
-    color: rgb(245, 85, 11),
-    font-weight: 800,
-  },
+    fontWeight: "800",
+  }
 });
 
 export default Header
