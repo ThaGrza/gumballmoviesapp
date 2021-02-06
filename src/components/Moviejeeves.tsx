@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {View, StyleSheet, Text } from "react-native";
 import axios from "../routes/axios"
 require("dotenv").config();
 
@@ -28,8 +29,8 @@ class Moviejeeves extends Component {
   };
 
   getSimilar(event){
-    let query = baseUrl + this.state.movieId + similarSearch + key + language;
-    Axios.get(query)
+    let query = this.state.movieId + similarSearch + key + language;
+    axios.get(query)
       .then(res => {
       console.log(res);
       let simResults = Math.floor(Math.random() * res.data.results.length)
@@ -65,7 +66,7 @@ class Moviejeeves extends Component {
   }
 
   getMovie(query){
-    Axios.get(query)
+    axios.get(query)
       .then(res => {
         console.log(res);
         if(res.data.adult === true || res.data.backdrop_path === null){
@@ -90,45 +91,46 @@ class Moviejeeves extends Component {
 
   render(){
     return(
-      <div className='movie_container'>
-        {this.state.movieDisplay === false && <div className='movie_display'>
-          <img src={this.state.movieImageNotFound} className='movie_image' alt='Not Found'/>
-          <h1 className='noMovieFound'>{this.state.movieTitle}</h1>
-          </div>
+      <View style={styles.movieContainer}>
+        {this.state.movieDisplay === false && <View style={styles.movieDisplay}>
+          <img src={this.state.movieImageNotFound} style={styles.movieImage} alt='Not Found'/>
+          <Text style={styles.noMovieFound}> {this.state.movieTitle}</Text>
+          </View>
         }
 
-        {this.state.movieDisplay === true && <div className='movie_display'>
-          <img src={'https://image.tmdb.org/t/p/w500/' + this.state.movieImg} className='movie_image' alt='Found'/>
-          <div className='movieInfo'>
-            <h1 className='movieTitle'>{this.state.movieTitle}</h1>
-            <p className='movieDescription'>{this.state.description}</p>
-          </div>
-        </div>
+        {this.state.movieDisplay === true && <View style={styles.movieDisplay}>
+          <img src={'https://image.tmdb.org/t/p/w500/' + this.state.movieImg} style={styles.movieImage} alt='Found'/>
+          <View style={styles.movieInfo}>
+            <Text style={styles.movieTitle}>{this.state.movieTitle}</Text>
+            <Text style={styles.movieDescription}>{this.state.description}</Text>
+          </View>
+        </View>
         }
-        <div className='button_container'>
-          <button className='find_movieButton' onClick={this.searchChange}>Randomizer</button>
+        <View style={styles.buttonContainer}>
+          <button style={styles.findMovieButton} onClick={this.searchChange}>Randomizer</button>
         { this.state.similarMovie === true &&
-          <button className='find_movieButton' onClick={this.getSimilar}>Similar To This</button>
+          <button style={styles.findMovieButton} onClick={this.getSimilar}>Similar To This</button>
         }
-        </div>
-    </div>
+        </View>
+    </View>
     )
   }
 }
 
+const styles = StyleSheet.create({
+  // movieContainer
+  // buttonsContainer
+  // genreButton
+  // buttonContainer
+  // findMovieButton
+  // findMovieButton:active
+  // movieDisplay
+  // movieimage
+  // movieInfo
+  // movieTitle
+  // movieDescription
+  // noMovieFound
+})
+
+
 export default Moviejeeves;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

@@ -10,9 +10,6 @@ const Header = () => {
   )
 }
 
-
-
-
 const styles = StyleSheet.create({
   headerContainer: {
     textAlign: "center",
