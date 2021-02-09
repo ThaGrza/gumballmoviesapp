@@ -12,13 +12,6 @@ const requests = {
    fetchMystery: `/discover/movie?api_key=${TMDB_API_KEY}&with_genres=9648`,
    fetchWestern: `/discover/movie?api_key=${TMDB_API_KEY}&with_genres=37`,
    fetchScienceFiction: `/discover/movie?api_key=${TMDB_API_KEY}&with_genres=878`,
-
-
-
-
-
-
-
 }
 
 
