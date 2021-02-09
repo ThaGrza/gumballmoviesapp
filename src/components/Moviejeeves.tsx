@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {View, StyleSheet, Text } from "react-native";
 import axios from "../routes/axios"
-require("dotenv").config();
 
 const language: string = "&language=en-US";
-const key = process.env.REACT_APP_API_KEY;
 const similarSearch: string = "/similar?api_key=";
 
 class Moviejeeves extends Component {
@@ -29,7 +27,7 @@ class Moviejeeves extends Component {
   };
 
   getSimilar(event){
-    let query = this.state.movieId + similarSearch + key + language;
+    let query = this.state.movieId + similarSearch + TMDB_API_KEY + language;
     axios.get(query)
       .then(res => {
       console.log(res);

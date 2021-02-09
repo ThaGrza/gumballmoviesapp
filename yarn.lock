@@ -2800,7 +2800,7 @@
   "resolved" "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz"
   "version" "0.1.2"
 
-"dotenv@^8.2.0":
+"dotenv@^8.0.0":
   "integrity" "sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-8.2.0.tgz"
   "version" "8.2.0"
@@ -5428,6 +5428,13 @@
   "integrity" "sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA=="
   "resolved" "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz"
   "version" "17.0.1"
+
+"react-native-dotenv@^2.5.1":
+  "integrity" "sha512-39no3YJviNJwC+hqILHLWGjcCMc8qpSMlJF+SzkLIH0dvnL2ZHxzC5+CRmKN54dCEjpBL0qUp7ZXI9JPhptgUg=="
+  "resolved" "https://registry.npmjs.org/react-native-dotenv/-/react-native-dotenv-2.5.1.tgz"
+  "version" "2.5.1"
+  dependencies:
+    "dotenv" "^8.0.0"
 
 "react-native-safe-area-context@3.1.9":
   "integrity" "sha512-wmcGbdyE/vBSL5IjDPReoJUEqxkZsywZw5gPwsVUV1NBpw5eTIdnL6Y0uNKHE25Z661moxPHQz6kwAkYQyorxA=="
