@@ -1,4 +1,4 @@
-import { TMDB_API_KEY } from 'react-native-dotenv';
+import { TMDB_API_KEY } from '@env';
 
 
 const requests = {
